@@ -1,0 +1,22 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "react-vite-spa",
+  "compatibility_date": "2025-12-14",
+  "assets": {
+    "directory": "dist"
+  },
+  // Custom domain routes
+  "routes": [
+    {
+      "pattern": "react-vite-spa.orbty.app",
+      "custom_domain": true
+    }
+  ],
+  // Workers Builds configuration (CI/CD nativo do Cloudflare)
+  // Docs: https://developers.cloudflare.com/workers/ci-cd/builds/
+  "build": {
+    "command": "npm run build",
+    "cwd": "/",
+    "watch_dir": "src"
+  }
+}
